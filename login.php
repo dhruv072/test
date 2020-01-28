@@ -5,13 +5,14 @@ $i=$_POST['userid'];
 $p=$_POST['userpasswrord'];
 $a=$_POST['address'];
 
-// echo"Welcome $n";
-// echo "<br>";
-// echo "YOUR ID: $i";
-// echo "<br>";
+echo"Welcome $n";
+echo "<br>";
+echo "YOUR ID: $i";
 // echo "Password: $p";
-// echo "<br>";
-// echo "Address: $a"; # cheking the input getting in php or not 
+echo "<br>";
+echo "Address: $a"; # cheking the input getting in php or not 
+echo " <br>";
+echo "<br>";
 
  $connect = mysqli_connect("localhost","root","","userdata");
 // if($connect) 
@@ -36,5 +37,8 @@ $a=$_POST['address'];
  {
      echo "! ERROR RECORD INSERTED ...UNSUCESSFULLY ! ";
  }
+
+ # to retive the data database
+ 
 
 ?>
