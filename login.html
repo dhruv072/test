@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="login.php" method="post">
+    <form action="register.php" method="post">
         <table  border="0" align="center">
                 <tr>
                     <td>UserName:</td>
@@ -16,8 +16,8 @@
                      <br>
                     <tr>
 
-                    <td>UserID:</td>
-                    <td><input type="text"  name="userid" required="required"></td> 
+                    <!-- <td>UserID:</td>
+                    <td><input type="text"  name="userid" required="required"></td>  -->
                     </tr>
                     <br>
                     <tr>
@@ -26,10 +26,13 @@
                     </tr>
                     <tr>
                     <td>Address: </td>
-                    <td><input type="textarea" name="address"></td>                        
+                    <td><input type="email" name="address" required = "required></td>                        
                     </tr> 
                 <tr>
-                    <td><input type="submit" value="Login"></td>
+                    <td><input type="submit" value="Login" name="REGISTER"></td>
+                    <td><a href="newglowing.html">
+                        <input type="button" value="signup">
+                    </a> </td>
                    
                 </tr>
 
