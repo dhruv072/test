@@ -1,11 +1,11 @@
 <?php
-
+ob_start(); // help in dispaly dont know how it wrks
 session_start();
 
 if(!isset($_SESSION['username']))
 {
     echo "<script> 
-    alert('Logged Out');
+    alert('End');
     location.href='login.html'; 
     </script>";
 }
