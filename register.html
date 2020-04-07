@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <!-- <script src="showpass.js"></script> -->
+    <style>
+        .eye
+        {
+            width: 15px;
+        }
+    </style>
 </head>
 <body>
     <form action="register.php" method="post">
@@ -20,15 +27,23 @@
                     <td><input type="text"  name="userid" required="required"></td>  -->
                     </tr>
                     <br>
-                    <tr>
-                    <td>Password:</td>
-                    <td><input type="password"  name="userpasswrord"required="required"></td>
-                    </tr>
+                   
 
                     <tr>
-                    <td>Address: </td>
+                    <td>Address: </td> 
                     <td><input type="email" name="address" required = "required"></td>                        
                     </tr>  
+
+                    <tr>
+
+                       
+                        <input type="checkbox" onclick="toggle()" >
+                        <td>Password:</td>
+
+                        <!-- <input type="password"  name="userpasswrord"required="required id="pass" > -->
+                        <td><input type="password" name="userpasswrord" id="pass" required="required"></td>
+                        <td><input type="checkbox" onclick="toggle()" ><img class="eye" src="https://img.icons8.com/material-sharp/24/000000/angry-eye--v1.png"/>  </td> 
+                        </tr>
 
              <tr>
                     <td><input type="submit" value="SignUp" name="REGISTER"></td>
@@ -40,5 +55,24 @@
    <tr>
         </table>
     </form>
+
+    <script>
+        function toggle()
+ { 
+    var temp = document.getElementById("pass"); 
+    if (temp.type === "password")
+     { 
+        temp.type = "text"; 
+    } 
+    else 
+    { 
+        temp.type = "password"; 
+    } 
+} 
+    </script>
+
+
+
+
 </body>
 </html>

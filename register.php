@@ -22,42 +22,65 @@ $a= mysqli_real_escape_string($connect,$a);# to prevent from sql injection secur
 
  $p = password_hash($p,PASSWORD_BCRYPT);
 
+ $check_email = "SELECT * from user_details WHERE user_address = '$a'";
+ $checkusername="SELECT * from user_details WHERE user_name = '$n'";
+ $username = mysqli_query($connect,$checkusername);
+ $email = mysqli_query($connect,$check_email);
 
+ $nuser = mysqli_num_rows($username);
 
-$check = " select * from user_details where user_name= '$n'&& user_password = '$p' && user_address = '$a' "; # query to chek the record exist or not in the databse
-$result = mysqli_query($connect,$check) ; 
+ $emailcount = mysqli_num_rows($email);
+  
+
+$insert = " SELECT * from user_details where user_name = '$n'&& user_password = '$p' && user_address = '$a' "; # query to chek the record exist or not in the databse
+$result = mysqli_query($connect,$insert) ; 
 $check_rows = mysqli_num_rows($result); # check the no of rows in the database
 
-if ($check_rows == 1) #check the records in the table 
+if($emailcount > 0 )
 {
-    // echo " RECORD IS PRESENT  ";
+    echo "<script> 
+    alert('E-mail Account Alredy Registerd ')
+    location.href='register.html' 
+    </script>"; 
+// echo " test exixt mail";
+}
+elseif ($nuser > 0) 
+{
+    
+    // echo " user name exist";
     
     echo "<script> 
-            alert('ALREDY REGISTERD PLEASE LOGIN');
-            location.href='login.html'; 
+            alert('Usernamr Alredy Exist');
+            location.href='register.html'; 
             </script>";
-      //header('location:login.html');
+    //   //header('location:login.html');
 
  
 
 
-}
-else
-{
+ }
+
+ else
+
+ {
 
     $insert = " insert into user_details(user_name , user_password , user_address) values ('$n' , '$p' , '$a')";
      mysqli_query($connect,$insert); #  
   
      //echo "Your ID ".$connect-> insert_id;# to show Last inserted ID
      
-
     echo "<script> 
-            alert('REGISTERD');
-            location.href='login.html'; 
-         </script>"; #https://stackoverflow.com/questions/36967678/javascript-alert-box-not-showing-on-php-after-header-redirect/36967807
-    // header('location:login.html');
+            alert('REGISTERD')
+            location.href='login.html' 
+            </script>"; 
+
+    // echo "registerd";
+            
+            //header('location:login.html');
     
 }
+
+
 
 
 ?>
