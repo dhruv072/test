@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="showpass.js"></script>
+    <style>
+        .eye
+        {
+            width: 15px;
+        }
+    </style>
+</head>
+<body>
+    <form action="validate.php" method="post">
+        <table  border="0" align="center">
+                <tr>
+                    <td>UserName:</td>
+                    <td><input type="text" name="nm" required="required"></td> 
+                </tr>
+                     <br>
+                    <tr>
+
+                    <!-- <td>UserID:</td>
+                    <td><input type="text"  name="userid" required="required"></td>  -->    
+                    </tr>
+                    <br>
+                    <tr>
+                    <td>Password:</td>
+                    <!-- <td><input type="password"  name="userpasswrord"required="required"></td> -->
+                      <td><input type="password" name="userpasswrord" id="pass" required="required" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" minlength="10" maxlength="10" ></td>
+                    <td><input type="checkbox" onclick="toggle()" > <img class="eye" src="https://img.icons8.com/material-sharp/24/000000/angry-eye--v1.png"/></td> 
+                    </tr>
+
+                    <!-- <tr>
+                    <td>Address:reset.php </td>
+                    <td><input type="email" name="address" required = "required"></td>                        
+                    </tr>   -->
+
+             <tr>
+                    <td><input type="submit" value=Login name="Login"></td>
+                    <td><a href="register.html">
+                        <input type="button" value="signup">
+                    </a> </td>
+                   
+                    <td><a href="checkmail.html">
+                        <input type="button" value="Forget Password?">
+                    </a> </td>
+
+                </tr>
+   <tr>
+        </table>
+    </form>
+</body>
+</html>
